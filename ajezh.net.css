@@ -1,19 +1,42 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(9, 9, 54);
+    animation-name: background-color-change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+/* Background color shift*/
+@keyframes background-color-change {
+    0% {background-color: rgb(9, 9, 54);}
+    33% {background-color: rgb(40, 40, 124);}
+    66% {background-color: rgb(18, 111, 169);}
+    100% {background-color: #01b6fa;}
+}
+
+h6{
+    font-weight: normal;
 }
   .header {
       padding: 80px;
       text-align: center;
-      background: #d74d43;
       color: white;
+      text-shadow: 2px 2px 5px black;
+      background-image: url("HeaderBackground_1.png");
+      
   }
   .header h1 {
-      font-size: 40px;
+      font-size: 50px;
+
   }
   /* Styles the top navigation bar */
   .navbar {
   overflow: hidden; 
   background-color: #333;
+  background-image: linear-gradient(#333, #1c1c1c);
+  position: sticky;
+  top: 0;
+
   }
 
   /* Style the navigation bar links */
@@ -34,6 +57,7 @@ body {
   /* Change color on hover/mouse-over */
   .navbar a:hover {
   background-color: #ddd; 
+  background-image: linear-gradient(#e7e7e7, #bababa);
   color: black; 
   }
   /* Ensures proper sizing */
@@ -47,11 +71,32 @@ body {
   flex-wrap: wrap;
   }
 
-  /* Sidebar/left column */
+  /* Sidebar */
   .side {
   flex: 30%;
   background-color: #f1f1f1;
+  background-image: linear-gradient(#f1f1f1, #d3d3d3);
   padding: 20px;
+  }
+
+  .side:hover img{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    
   }
 
   /* Main column */
@@ -77,5 +122,17 @@ body {
   .footer {
   padding: 20px;
   text-align: center;
+  color: white; 
   background: #ddd;
+  background-image: linear-gradient(#5a4d97, #3a3357);
+
+  }
+
+  .icon {
+    float: right;
+  }
+
+  /* Vertical text */
+  .vertical {
+    writing-mode: vertical-rl;
   }
